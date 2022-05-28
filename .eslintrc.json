@@ -1,0 +1,39 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "standard"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+      /* ########################################## WARN ############################################### */
+      "no-console": "warn",
+      "max-len": ["warn", { "code": 150 }],
+      "no-unused-vars": ["warn", {"argsIgnorePattern": "^_"}],
+      // "valid-jsdoc": "warn",
+
+      /* ########################################## ERROR ############################################### */
+      "quotes": ["error", "double"],
+      "comma-spacing": ["error", { "before": false, "after": true }],
+      "no-duplicate-imports": ["error", { "includeExports": true }],
+      "no-dupe-else-if": "error",
+      "no-undef": "off",
+      "space-before-blocks": ["error", "always"],
+      "sort-imports": ["error", {
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+    }],
+    "@typescript-eslint/no-explicit-any": ["error", { "fixToUnknown": false }]
+    }
+}
