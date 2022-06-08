@@ -23,7 +23,7 @@
       // "valid-jsdoc": "warn",
 
       /* ########################################## ERROR ############################################### */
-      "quotes": ["error", "double"],
+      "quotes": ["error", "single"],
       "comma-spacing": ["error", { "before": false, "after": true }],
       "no-duplicate-imports": ["error", { "includeExports": true }],
       "no-dupe-else-if": "error",
