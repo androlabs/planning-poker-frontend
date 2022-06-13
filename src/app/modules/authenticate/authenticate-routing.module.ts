@@ -1,11 +1,12 @@
 import { RouterModule, Routes } from '@angular/router'
 
 import { NgModule } from '@angular/core'
+import { SingInComponent } from './components/sing-in/sing-in.component'
 
 const routes: Routes = [
   {
-    path: 'authenticate',
-    loadChildren: () => import('./modules/authenticate/authenticate.module').then(module => module.AuthenticateModule)
+    path: '',
+    component: SingInComponent
   }
 ]
 
@@ -13,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AuthenticateRoutingModule {}
