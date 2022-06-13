@@ -1,0 +1,24 @@
+.label-input {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    background: #fff;
+    position: absolute;
+    left: 15px;
+    padding: 0 10px;
+
+    font: var(--heading3);
+  }
+
+  input {
+    margin-top: 8px;
+    height: 40px;
+    padding: 0 23px;
+
+    border-radius: 99px;
+    border: 2px solid var(--gray-900);
+
+    font: var(--heading3);
+  }
+}
