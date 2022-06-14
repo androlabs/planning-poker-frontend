@@ -1,0 +1,41 @@
+.singInContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  div {
+    background-color: #cecece;
+
+    width: 900px;
+
+    padding: 50px 150px;
+    border-radius: 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    header {
+      h1 {
+        font: var(--heading1);
+      }
+
+      h2 {
+        font: var(--heading2);
+      }
+    }
+
+    main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

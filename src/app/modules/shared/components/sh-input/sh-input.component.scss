@@ -1,6 +1,7 @@
 .label-input {
   display: flex;
   flex-direction: column;
+  position: relative;
 
   span {
     background: #fff;
@@ -19,6 +20,9 @@
     border-radius: 99px;
     border: 2px solid var(--gray-900);
 
+    width: 100%;
+
+    outline: none;
     font: var(--heading3);
   }
 }
