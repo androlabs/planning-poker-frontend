@@ -18,4 +18,8 @@ export class ShButtonComponent {
   get verifySide () {
     return this.IconPosition === 'left' ? 'row' : 'row-reverse'
   }
+
+  get haveIcon () {
+    return this.icon !== undefined
+  }
 }

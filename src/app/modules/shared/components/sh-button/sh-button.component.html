@@ -1,8 +1,10 @@
-<button
-  class="button"
-  [ngClass]="[color]"
-  [ngStyle]="{ 'flex-direction': verifySide }"
->
-  <mat-icon>{{ icon }}</mat-icon
-  >{{ text }}
-</button>
+<div>
+  <button
+    class="button"
+    [ngClass]="[color]"
+    [ngStyle]="{ 'flex-direction': verifySide }"
+  >
+    <mat-icon *ngIf="haveIcon">{{ icon }}</mat-icon
+    >{{ text }}
+  </button>
+</div>
