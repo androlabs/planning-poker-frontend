@@ -1,6 +1,7 @@
 import { AuthenticateRoutingModule } from './authenticate-routing.module'
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
+import { SharedModule } from '../shared/shared.module'
 import { SingInComponent } from './components/sing-in/sing-in.component'
 
 @NgModule({
@@ -9,7 +10,8 @@ import { SingInComponent } from './components/sing-in/sing-in.component'
   ],
   imports: [
     CommonModule,
-    AuthenticateRoutingModule
+    AuthenticateRoutingModule,
+    SharedModule
   ]
 })
 export class AuthenticateModule { }
