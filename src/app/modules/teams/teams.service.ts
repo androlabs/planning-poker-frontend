@@ -23,9 +23,9 @@ export class TeamsService {
     return this.httpClient.post<any>(`${this.backendUrl}/teams`, teamData)
   }
 
-  public onlyOneTeam (id: string) {
+  public onlyOneTeam (teamID: string) {
     /* TODO: Implements obeservable type */
-    return this.httpClient.get<any>(`${this.backendUrl}/teams/${id}`)
+    return this.httpClient.get<any>(`${this.backendUrl}/teams/${teamID}`)
   }
 
   public userTeam () {
@@ -38,8 +38,18 @@ export class TeamsService {
     return this.httpClient.get<any>(`${this.backendUrl}/teams/${id}/users`)
   }
 
-  public updateTeam (dataTeam: UpdateTeam) {
+  public updateTeam (teamData: UpdateTeam) {
     /* TODO: Implements obeservable type */
-    return this.httpClient.put<any>(`${this.backendUrl}/teams/${dataTeam.id}`, { ...dataTeam })
+    return this.httpClient.put<any>(`${this.backendUrl}/teams/${teamData.id}`, { ...teamData })
+  }
+
+  public generateTeamInvite (teamID: string) {
+    /* TODO: Implements obeservable type */
+    return this.httpClient.post<any>(`${this.backendUrl}/teams-invites/${teamID}/generate`, {})
+  }
+
+  public useTeamInvite (secretInvite: string) {
+    /* TODO: Implements obeservable type */
+    return this.httpClient.post<any>(`${this.backendUrl}/teams-invites/${secretInvite}`, {})
   }
 }
