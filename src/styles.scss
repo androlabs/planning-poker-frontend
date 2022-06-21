@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,13 +19,15 @@ $planning-poker-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$planning-poker-theme: mat.define-light-theme((
-  color: (
-    primary: $planning-poker-primary,
-    accent: $planning-poker-accent,
-    warn: $planning-poker-warn,
+$planning-poker-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $planning-poker-primary,
+      accent: $planning-poker-accent,
+      warn: $planning-poker-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -37,6 +38,7 @@ $planning-poker-theme: mat.define-light-theme((
 :root {
   /* COLORS */
   --gray-900: #202225;
+  --gray-400: #cecece;
 
   --linear-blue: linear-gradient(to right, #00d5ff, #1e66cd);
   --linear-red: linear-gradient(to right, #f26a1c, #f31b65);
@@ -111,11 +113,14 @@ $planning-poker-theme: mat.define-light-theme((
 
 body {
   font-family: "Montserrat", "Roboto", sans-serif;
+  color: var(--gray-900);
 }
 
 button {
   cursor: pointer;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
