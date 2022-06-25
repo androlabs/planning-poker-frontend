@@ -1,6 +1,7 @@
+import { MeResponse, SingIn, SingInResponse, SingUp, SingUpResponse } from './authenticate.interface'
+
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { SingUp } from './authenticate.interface'
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +11,14 @@ export class AuthenticateService {
   constructor (private readonly httpClient: HttpClient) { }
 
   protected singUp (singUp: SingUp) {
-    /* TODO: Implements type observable */
-
-    return this.httpClient.post<any>(`${this.backendUrl}/signup`, { ...singUp })
+    return this.httpClient.post<SingUpResponse>(`${this.backendUrl}/signup`, { ...singUp })
   }
 
-  protected singIn (singIn: SingUp) {
-    /* TODO: Implements type observable */
-
-    return this.httpClient.post<any>(`${this.backendUrl}/login`, { ...singIn })
+  protected singIn (singIn: SingIn) {
+    return this.httpClient.post<SingInResponse>(`${this.backendUrl}/login`, { ...singIn })
   }
 
   protected me () {
-    /* TODO: Implements type observable */
-    return this.httpClient.get<any>(`${this.backendUrl}/me`)
+    return this.httpClient.get<MeResponse>(`${this.backendUrl}/me`)
   }
 }
