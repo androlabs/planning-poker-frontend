@@ -1,14 +1,8 @@
+import { Create, CreateResponse, Team, UpdateTeam } from './teams.interface'
+
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-
-type Team = {
-  name: string
-}
-
-type UpdateTeam = {
-  id: string
-  name: string
-}
+import { User } from '../User/User.interface'
 
 @Injectable({
   providedIn: 'root'
@@ -18,38 +12,23 @@ export class TeamsService {
 
   constructor (private readonly httpClient: HttpClient) {}
 
-  public createTeam (teamData: Team) {
-    /* TODO: Implements obeservable type */
-    return this.httpClient.post<any>(`${this.backendUrl}/teams`, teamData)
+  public createTeam (teamData: Create) {
+    return this.httpClient.post<CreateResponse>(`${this.backendUrl}/teams`, teamData)
   }
 
   public onlyOneTeam (teamID: string) {
-    /* TODO: Implements obeservable type */
-    return this.httpClient.get<any>(`${this.backendUrl}/teams/${teamID}`)
+    return this.httpClient.get<Team>(`${this.backendUrl}/teams/${teamID}`)
   }
 
   public userTeam () {
-    /* TODO: Implements obeservable type */
-    return this.httpClient.get<any>(`${this.backendUrl}/users/teams`)
+    return this.httpClient.get<Array<Team>>(`${this.backendUrl}/users/teams`)
   }
 
   public teamUsers (id: string) {
-    /* TODO: Implements obeservable type */
-    return this.httpClient.get<any>(`${this.backendUrl}/teams/${id}/users`)
+    return this.httpClient.get<Array<User>>(`${this.backendUrl}/teams/${id}/users`)
   }
 
-  public updateTeam (teamData: UpdateTeam) {
-    /* TODO: Implements obeservable type */
-    return this.httpClient.put<any>(`${this.backendUrl}/teams/${teamData.id}`, { ...teamData })
-  }
-
-  public generateTeamInvite (teamID: string) {
-    /* TODO: Implements obeservable type */
-    return this.httpClient.post<any>(`${this.backendUrl}/teams-invites/${teamID}/generate`, {})
-  }
-
-  public useTeamInvite (secretInvite: string) {
-    /* TODO: Implements obeservable type */
-    return this.httpClient.post<any>(`${this.backendUrl}/teams-invites/${secretInvite}`, {})
+  public updateTeam (teamData: UpdateTeam, teamID: string) {
+    return this.httpClient.put<void>(`${this.backendUrl}/teams/${teamID}`, { ...teamData })
   }
 }
