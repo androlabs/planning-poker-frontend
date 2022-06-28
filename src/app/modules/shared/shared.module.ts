@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common'
-import { NgModule } from '@angular/core'
+import { HttpClientModule } from '@angular/common/http'
 import { MatIconModule } from '@angular/material/icon'
+import { NgModule } from '@angular/core'
+import { ReactiveFormsModule } from '@angular/forms'
 import { ShButtonComponent } from './components/sh-button/sh-button.component'
 import { ShInputComponent } from './components/sh-input/sh-input.component'
 
@@ -11,11 +13,14 @@ import { ShInputComponent } from './components/sh-input/sh-input.component'
   ],
   imports: [
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   exports: [
     ShButtonComponent,
-    ShInputComponent
+    ShInputComponent,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

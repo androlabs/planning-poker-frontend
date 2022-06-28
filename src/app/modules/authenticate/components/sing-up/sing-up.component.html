@@ -4,17 +4,26 @@
       <h1>Crie sua conta</h1>
       <h2>Apos criar veja as inumeras possibilidades</h2>
     </header>
-    <main>
-      <sh-input label="Nome" placeholder="Digite seu nome"></sh-input>
-      <sh-input label="Email" placeholder="Digite seu email"></sh-input>
+    <form [formGroup]="singUpForm">
+      <sh-input
+        label="Nome"
+        placeholder="Digite seu nome"
+        [control]="nameControl"
+      ></sh-input>
+      <sh-input
+        label="Email"
+        placeholder="Digite seu email"
+        [control]="emailControl"
+      ></sh-input>
       <sh-input
         label="Password"
         placeholder="Digite sua senha"
         type="password"
+        [control]="passwordControl"
       ></sh-input>
 
-      <sh-button text="Criar conta"></sh-button>
-    </main>
+      <sh-button text="Criar conta" (click)="onSubmit()"></sh-button>
+    </form>
 
     <footer>
       <span>Ja tem uma conta ? fazer login</span>

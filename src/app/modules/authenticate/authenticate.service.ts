@@ -10,15 +10,15 @@ export class AuthenticateService {
   private readonly backendUrl = 'http://localhost:3000'
   constructor (private readonly httpClient: HttpClient) { }
 
-  protected singUp (singUp: SingUp) {
+  public singUp (singUp: SingUp) {
     return this.httpClient.post<SingUpResponse>(`${this.backendUrl}/signup`, { ...singUp })
   }
 
-  protected singIn (singIn: SingIn) {
+  public singIn (singIn: SingIn) {
     return this.httpClient.post<SingInResponse>(`${this.backendUrl}/login`, { ...singIn })
   }
 
-  protected me () {
+  public me () {
     return this.httpClient.get<MeResponse>(`${this.backendUrl}/me`)
   }
 }

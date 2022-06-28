@@ -1,9 +1,11 @@
-<label class="label-input">
-  <span>{{ label }}</span>
-  <input
-    type="text"
-    placeholder="{{ placeholder }}"
-    type="{{ type }}"
-    (change)="onChange($event)"
-  />
-</label>
+<form [formGroup]="inputForm">
+  <label class="label-input">
+    <span>{{ label }}</span>
+    <input
+      type="text"
+      placeholder="{{ placeholder }}"
+      type="{{ type }}"
+      formControlName="input"
+    />
+  </label>
+</form>

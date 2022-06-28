@@ -5,14 +5,20 @@
       <h2>Apos entrar aproveite todas as funcionalidades</h2>
     </header>
     <main>
-      <sh-input label="Nome" placeholder="Digite seu nome"></sh-input>
       <sh-input
         label="Email"
-        placeholder="Digite seu email"
         type="email"
+        placeholder="Digite seu nome"
+        [control]="emailControl"
+      ></sh-input>
+      <sh-input
+        label="Password"
+        placeholder="Digite sua senha"
+        type="password"
+        [control]="passwordControl"
       ></sh-input>
 
-      <sh-button text="Entrar"></sh-button>
+      <sh-button text="Entrar" (click)="onSubmit()"></sh-button>
     </main>
 
     <footer>
